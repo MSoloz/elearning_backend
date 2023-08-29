@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'question.apps.QuestionConfig',
     'course.apps.CourseConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'topic.apps.TopicConfig'
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']

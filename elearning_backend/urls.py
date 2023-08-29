@@ -8,6 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/question/',include('question.urls')),
     path('api/course/',include('course.urls')),
-    path('api/subject/',include('subject.urls')),
+    path('api/topic/',include('topic.urls')),
     path('api/',include('user.urls'))
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
