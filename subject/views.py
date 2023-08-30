@@ -13,6 +13,12 @@ def create_subject(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
+def get_all_subjects(request):
+    subjects = Subject.objects.all()
+    serializer = SubjectSerializer(subjects, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def get_subject(request, subject_id):
     try:
         subject = Subject.objects.get(pk=subject_id)
