@@ -13,6 +13,12 @@ def create_topic(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
+def get_all_topics(request):
+    topics = Topic.objects.all()
+    serializer = TopicSerializer(topics, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def get_topic(request, topic_id):
     try:
         topic = Topic.objects.get(pk=topic_id)
